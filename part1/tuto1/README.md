@@ -4,7 +4,6 @@
 
 Editer le fichier `manifests/init.pp` :
 
-<!-- language: ruby -->
     file {
       '/tmp/test1':
         ensure  => file,
