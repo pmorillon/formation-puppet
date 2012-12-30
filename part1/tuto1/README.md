@@ -1,6 +1,6 @@
 # Part 1 : DSL Puppet
 
-## Tuto 1 : Resource File
+## Tuto 1 : Ressource `File`
 
 ### Création et gestion d'un fichier
 
@@ -19,7 +19,7 @@ Sur le serveur via `vagrant ssh` :
 
 ### Création et gestion d'un repertoire
 
-Ajouter la resource :
+Ajouter la ressource :
 
     file {
       '/tmp/dir1':
@@ -39,13 +39,13 @@ Sur le server :
         target  => '/tmp/test1';
     }
 
-__Note__ : Dans le cas de la resource de type File, puppet arrive à gérer les dépendances pour nous, il réalise implicitement les relations :
+__Note__ : Dans le cas de la ressource de type `File`, puppet arrive à gérer les dépendances pour nous, il réalise implicitement les relations :
 
     File['/tmp/test1'] -> File['/tmp/dir1/test2'] <- File['/tmp/dir1']
 
-### Regroupement de resources par type
+### Regroupement de ressources par type
 
-Il est possible de regrouper les resources par type comme ceci :
+Il est possible de regrouper les ressources par type comme ceci :
 
     file {
       '/tmp/test1':
