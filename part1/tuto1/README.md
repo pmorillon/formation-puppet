@@ -4,11 +4,13 @@
 
 Editer le fichier `manifests/init.pp` :
 
-<!-- language: puppet -->
-    file {
-      '/tmp/test1':
-        ensure  => file,
-        mode    => 644, owner => root, group => root,
-        content => 'test1\n';
-    }
+
+```puppet
+file {
+  '/tmp/test1':
+    ensure  => file,
+    mode    => 644, owner => root, group => root,
+    content => 'test1\n';
+}
+```
 
