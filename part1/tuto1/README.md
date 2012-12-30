@@ -10,7 +10,7 @@ Editer le fichier `manifests/init.pp` :
       '/tmp/test1':
         ensure  => file,
         mode    => 644, owner => root, group => root,
-        content => 'test1\n';
+        content => "test1\n";
     }
 
 Sur le serveur via `vagrant ssh` :
@@ -51,7 +51,7 @@ Il est possible de regrouper les ressources par type comme ceci :
       '/tmp/test1':
         ensure  => file,
         mode    => 644, owner => root, group => root,
-        content => 'test1\n';
+        content => "test1\n";
       '/tmp/dir1':
         ensure  => directory,
         mode    => 755, owner => root, group => root;
