@@ -43,6 +43,14 @@ __Note__ : Dans le cas de la ressource de type `File`, puppet arrive à gérer l
 
     File['/tmp/test1'] -> File['/tmp/dir1/test2'] <- File['/tmp/dir1']
 
+Les alias peuvent aussi être gérer sans l'attribut `target` :
+
+    file {
+      '/tmp/dir1/test2':
+        ensure  => '/tmp/test1';
+    }
+
+
 ### Regroupement de ressources par type
 
 Il est possible de regrouper les ressources par type comme ceci :
@@ -56,10 +64,26 @@ Il est possible de regrouper les ressources par type comme ceci :
         ensure  => directory,
         mode    => 755, owner => root, group => root;
       '/tmp/dir1/test2':
-        ensure  => link,
-        target  => '/tmp/test1';
+        ensure  => '/tmp/test1';
     }
 
+### Définition d'attributs par défauts
+
+    File {
+      owner => root, group => root
+    }
+    
+    file {
+      '/tmp/test1':
+        ensure  => file,
+        mode    => 644,
+        content => "test1\n";
+      '/tmp/dir1':
+        ensure  => directory,
+        mode    => 755;
+      '/tmp/dir1/test2':
+        ensure  => '/tmp/test1';
+    }
 
 ### Tests
 
