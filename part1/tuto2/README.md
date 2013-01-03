@@ -24,7 +24,7 @@ Dans ce tutoriel nous allons installer collectd et activer l'interface web de co
 #### Installation des dépendances pour l'interface web
 
     package {
-      ['libconfig-general-perl', 'librrds-perl', 'libregexp-common-perl']:
+      ['libconfig-general-perl', 'librrds-perl', 'libregexp-common-perl', 'libhtml-parser-perl']:
         ensure => installed;
     }
 

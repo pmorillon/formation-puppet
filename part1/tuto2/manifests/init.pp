@@ -4,7 +4,7 @@ package {
 }
 
 package {
-  ['libconfig-general-perl', 'librrds-perl', 'libregexp-common-perl','libhtml-parser-perl']:
+  ['libconfig-general-perl', 'librrds-perl', 'libregexp-common-perl', 'libhtml-parser-perl']:
     ensure => installed;
 }
 
