@@ -1,6 +1,6 @@
 # Part 1 : DSL Puppet
 
-## Tuto 1 : Ressource `File`
+## Tuto 1 : Ressource
 
 ### Création et gestion d'un fichier
 
