@@ -1,9 +1,12 @@
 # collectd.pp
 
+import 'apache.pp'
+import 'collectd/www.pp'
+
 # Class:: collectd
 #
 #
-class collectd {
+class collectd ($www = false) {
 
   package {
     'collectd':
@@ -17,5 +20,9 @@ class collectd {
   }
 
   Package['collectd'] -> Service['collectd']
+
+  if $www == true {
+    include 'collectd::www'
+  }
 
 } # Class:: collectd

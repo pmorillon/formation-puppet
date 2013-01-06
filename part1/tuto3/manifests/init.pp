@@ -1,8 +1,9 @@
 # init.pp
 
-import "apache.pp"
-import "collectd.pp"
-import "collectd/www.pp"
+import 'collectd.pp'
 
-include collectd::www
+class {
+  'collectd':
+    www => true;
+}
 

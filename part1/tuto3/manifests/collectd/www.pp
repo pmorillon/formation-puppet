@@ -17,4 +17,10 @@ class collectd::www {
       notify  => Service['apache2'];
   }
 
+  package {
+    ['libconfig-general-perl', 'librrds-perl', 'libregexp-common-perl', 'libhtml-parser-perl']:
+    ensure => installed;
+  }
+
+
 } # Class:: collectd::www

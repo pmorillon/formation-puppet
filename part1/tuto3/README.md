@@ -21,11 +21,9 @@ Dans ce tuto, nous allons réorganiser en classes ce que nous avons réalisé au
 
 # init.pp
 
-    import "apache.pp"
-    import "collectd.pp"
-    import "collectd/www.pp"
+    import 'collectd.pp'
     
-    include collectd::www
+    include 'collectd::www'
 
 ### Création des classes
 
@@ -34,5 +32,25 @@ Créez maintenant les classes suivantes :
 * `apache` dans le fichier _apache.pp_
 * `collectd` dans le fichier _collectd.pp_
 * `collectd::www` dans le fichier _collectd/www.pp_
+
+### Création d'une classe paramétrique
+
+# init.pp
+
+    import 'collectd.pp'
+    
+    class {
+      'collectd':
+        www => true;
+    }
+
+Par défaut, l'interface web ne doit pas être installé.
+
+__Note__ : utilisation de la condition `if`
+
+    if $www == true {
+      include 'collectd::www'
+    }
+
 
 
