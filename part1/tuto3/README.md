@@ -19,8 +19,6 @@ Dans ce tuto, nous allons réorganiser en classes ce que nous avons réalisé au
 
 ### init.pp
 
-# init.pp
-
     import 'collectd.pp'
     
     include 'collectd::www'
@@ -35,7 +33,7 @@ Créez maintenant les classes suivantes :
 
 ### Création d'une classe paramétrique
 
-# init.pp
+Contenu du fichier _init.pp_ :
 
     import 'collectd.pp'
     
