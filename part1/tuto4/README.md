@@ -1,6 +1,6 @@
 # Part 1 : DSL Puppet
 
-## Tuto 3 : Modules
+## Tuto 4 : Modules
 
 
 ### Manifest _init.pp_
