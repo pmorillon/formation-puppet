@@ -5,7 +5,7 @@
 
 ### Manifest _init.pp_
 
-La fichier `tuto4/manifests/init.pp` contiendra :
+Le fichier `tuto4/manifests/init.pp` contiendra :
 
     include 'ntp'
     
@@ -34,5 +34,3 @@ Ajouter l'option `--modulepath`
 __Note__ : Il est possible de définir le `modulepath` en éditant le fichier `/etc/puppet/puppet.conf` en ajoutant la ligne suivante dans la section `[main]`
 
     modulepath=/vagrant/tuto4/modules/
-
-
