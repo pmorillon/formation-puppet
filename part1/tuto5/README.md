@@ -20,15 +20,15 @@ __Notes__ :
 * Utiliser le fichier `/etc/ntp.conf` de la machine virtuelle pour créer un template ERB.
 * La partie du fichier qui sera modifié est la suivante :
 
-      server 0.debian.pool.ntp.org iburst
-      server 1.debian.pool.ntp.org iburst
-      server 2.debian.pool.ntp.org iburst
-      server 3.debian.pool.ntp.org iburst
+        server 0.debian.pool.ntp.org iburst
+        server 1.debian.pool.ntp.org iburst
+        server 2.debian.pool.ntp.org iburst
+        server 3.debian.pool.ntp.org iburst
 
 * En ruby voici comment on parcourt sur un tableau :
 
-      servers.each do |server|
-        puts "server #{server} iburst"
-      end
+        servers.each do |server|
+          puts "server #{server} iburst"
+        end
 
 
