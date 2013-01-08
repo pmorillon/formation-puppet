@@ -23,7 +23,7 @@ Créez les 3 modules suivants en utilisant tant que possible l'autoload :
 * collectd
 * ntp
 
-__Note__ : Pour le module _ntp_, On ne gèrera pour l'instant pas le contenu du fichier `/etc/ntp.conf`, on s'assurera seulement des droits et que tout changement relance le serveur _ntp_.
+__Note__ : Pour le module _ntp_, On ne gèrera pour l'instant pas le contenu du fichier `/etc/ntp.conf`.
 
 ### Utilisation des modules avec _puppet apply_
 
