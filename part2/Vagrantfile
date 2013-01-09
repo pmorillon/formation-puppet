@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+
+  config.vm.define :master do |master|
+    master.vm.box = 'debian-squeeze-x64-puppet_3.0.1'
+    master.vm.box_url = 'https://vagrant.irisa.fr/boxes/debian-squeeze-x64-puppet_3.0.1.box'
+    master.vm.forward_port 80, 10080
+    master.vm.network :hostonly, '192.168.1.10'
+
+    master.vm.provision :puppet do |puppet|
+      puppet.manifests_path = 'manifests'
+      puppet.manifest_file = 'master.pp'
+    end
+
+  end
+
+  config.vm.define :agent do |agent|
+    agent.vm.box = 'debian-squeeze-x64-puppet_3.0.1'
+    agent.vm.box_url = 'https://vagrant.irisa.fr/boxes/debian-squeeze-x64-puppet_3.0.1.box'
+    agent.vm.network :hostonly, '192.168.1.11'
+
+    agent.vm.provision :puppet do |puppet|
+      puppet.manifests_path = 'manifests'
+      puppet.manifest_file = 'agent.pp'
+    end
+
+  end
+
+end
+
