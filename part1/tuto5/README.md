@@ -31,4 +31,8 @@ __Notes__ :
           puts "server #{server} iburst"
         end
 
+### Modifier le module _apache_
 
+Modifier le module apache de sorte qu'il fonctionne sous __Debian__ et __Centos__.
+
+__Note__ : Sous Debian le paquet et le service se nomment `apache2` et sous Centos `httpd`.
