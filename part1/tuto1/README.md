@@ -9,7 +9,9 @@ Editer le fichier `manifests/init.pp` :
     file {
       '/tmp/test1':
         ensure  => file,
-        mode    => 644, owner => root, group => root,
+        mode    => '0644',
+        owner   => root,
+        group   => root,
         content => "test1\n";
     }
 
@@ -24,7 +26,9 @@ Ajouter la ressource :
     file {
       '/tmp/dir1':
         ensure  => directory,
-        mode    => 755, owner => root, group => root;
+        mode    => '0755',
+        owner   => root,
+        group   => root;
     }
 
 Sur le server :
@@ -58,11 +62,15 @@ Il est possible de regrouper les ressources par type comme ceci :
     file {
       '/tmp/test1':
         ensure  => file,
-        mode    => 644, owner => root, group => root,
+        mode    => '0644',
+        owner   => root,
+        group   => root,
         content => "test1\n";
       '/tmp/dir1':
         ensure  => directory,
-        mode    => 755, owner => root, group => root;
+        mode    => '0755',
+        owner   => root,
+        group   => root;
       '/tmp/dir1/test2':
         ensure  => '/tmp/test1';
     }
@@ -70,17 +78,18 @@ Il est possible de regrouper les ressources par type comme ceci :
 ### Définition d'attributs par défauts
 
     File {
-      owner => root, group => root
+      owner => root,
+      group => root
     }
     
     file {
       '/tmp/test1':
         ensure  => file,
-        mode    => 644,
+        mode    => '0644',
         content => "test1\n";
       '/tmp/dir1':
         ensure  => directory,
-        mode    => 755;
+        mode    => '0755';
       '/tmp/dir1/test2':
         ensure  => '/tmp/test1';
     }

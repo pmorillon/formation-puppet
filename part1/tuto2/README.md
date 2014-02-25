@@ -51,7 +51,9 @@ Dans ce tutoriel nous allons installer collectd et activer l'interface web de co
     file {
       '/etc/apache2/conf.d/collection3.conf':
         ensure  => file,
-        mode    => 644, owner => root, group => root,
+        mode    => '0644',
+        owner   => root,
+        group   => root,
         source  => '/vagrant/tuto2/files/collection3.conf',
     }
 
