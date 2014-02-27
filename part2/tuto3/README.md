@@ -27,8 +27,19 @@ Editer le fichier `/etc/puppet/manifests/site.pp` :
 
 Tester puppet sur l'agent.
 
-### Nouveau module
+### Utiliser Hiera comme External Node Classifier
 
-Créer un module `monservice` qui configurera le service ntp avec les paramètres de Hiera.
+Editer le fichier `/etc/puppet/manifests/site.pp` en ne laissant que la ligne suivante :
 
+    hiera_include('classes')
 
+Ajouter le fichier `/var/lib/hiera/agent.vagrantup.com.yaml`
+
+    ---
+    classes:
+     - ntp
+    ntp::servers:
+     - ntp1.irisa.fr
+     - ntp2.irisa.fr
+
+Relancer l'agent.
