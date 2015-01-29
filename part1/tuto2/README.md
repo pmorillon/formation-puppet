@@ -9,7 +9,7 @@ Dans ce tutoriel nous allons installer collectd et activer l'interface web de co
 #### Installation de collectd
 
     package {
-      'collected':
+      'collectd':
         ensure => installed;
     }
 
