@@ -55,6 +55,15 @@ Editer le fichier `/etc/puppet/puppet.conf`
     node_terminus = exec
     external_nodes = /usr/bin/env PUPPET_DASHBOARD_URL=http://localhost:3000 /usr/share/puppet-dashboard/bin/external_node
 
+Redémarrer les services
+    
+    vagrant@master:~$ sudo /etc/init.d/puppetmaster restart
+    vagrant@master:~$ sudo /etc/init.d/puppet-dashboard-workers restart
+    
+Relancer l'agent
+
+    vagrant@agent:~$ sudo puppet agent --test
+
 Ajouter la classe `apache` et le noeud `agent.vagrantup.com` dans le dashboard, puis tester l'ENC via la ligne de commande.
 
     vagrant@master:~$ /usr/bin/env PUPPET_DASHBOARD_URL=http://localhost:3000 /usr/share/puppet-dashboard/bin/external_node agent.vagrantup.com
